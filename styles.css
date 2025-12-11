@@ -1,0 +1,129 @@
+:root{
+  --max-width: 1100px;
+  --accent: #0a58ca;
+  --muted: #6b7280;
+  --bg: #ffffff;
+  --card-bg: #fbfbfd;
+  --radius: 12px;
+  --container-padding: 20px;
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #111827;
+  line-height: 1.6;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:var(--container-padding);
+}
+
+/* Header */
+.site-header{
+  border-bottom:1px solid #e6e9ef;
+  background:linear-gradient(180deg, #ffffff, #f8fbff);
+}
+.site-title{
+  margin: 18px 0 6px;
+  font-size:clamp(18px, 3vw, 28px);
+  letter-spacing:-0.5px;
+}
+.site-subtitle{
+  margin:0 0 16px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* Hero */
+.hero{
+  display:flex;
+  gap:28px;
+  align-items:center;
+  margin:28px 0;
+  flex-wrap:wrap;
+}
+.hero .hero-content{
+  flex:1 1 360px;
+}
+.hero-figure{
+  flex:0 1 420px;
+  margin:0;
+}
+.hero-figure img{
+  width:100%;
+  border-radius:10px;
+  display:block;
+  box-shadow:0 8px 30px rgba(15,23,42,0.06);
+}
+.lede{color:var(--muted)}
+
+/* content grid */
+.content-grid{
+  display:grid;
+  grid-template-columns: 1fr 320px;
+  gap:32px;
+  align-items:start;
+}
+.essay{
+  background:transparent;
+}
+.essay h3{margin-top:0}
+.essay img{max-width:100%; border-radius:8px; display:block; margin:18px 0;}
+
+/* sidebar cards */
+.sidebar .card{
+  background:var(--card-bg);
+  padding:14px;
+  border-radius:10px;
+  margin-bottom:18px;
+  box-shadow:0 6px 18px rgba(12,18,31,0.04);
+}
+.sidebar figure{margin:12px 0}
+.sidebar img{width:100%; border-radius:8px;}
+
+/* visual story */
+.visual-story{
+  margin:42px 0;
+  padding:22px;
+  border-radius:10px;
+  background:linear-gradient(180deg,#fbfcff,#ffffff);
+  border:1px solid #eef1f6;
+}
+.visual-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+.visual-grid img{width:100%; border-radius:8px;}
+
+/* footer */
+.site-footer{
+  border-top:1px solid #e6e9ef;
+  margin-top:30px;
+  padding:24px 0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* checklist */
+.checklist ul{padding-left:18px}
+.checklist li{margin-bottom:8px}
+
+/* responsive */
+@media (max-width:1000px){
+  .content-grid{grid-template-columns:1fr 300px;}
+  .visual-grid{grid-template-columns:1fr;}
+}
+@media (max-width:760px){
+  .content-grid{grid-template-columns:1fr;}
+  .hero{flex-direction:column-reverse}
+  .hero-figure{width:100%}
+  .site-title{font-size:20px}
+}
